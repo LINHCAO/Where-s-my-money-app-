@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage"
+             Title="Log In">
+
+    <StackLayout
+        Orientation="Vertical"
+        Padding="50,20">
+
+        <Image Source="Icon.png" />
+
+        <Label Text="Username" />
+
+        <Entry Placeholder="Username" />
+
+        <Label Text="Password" />
+
+        <Entry Placeholder="Password"
+               IsPassword="True" />
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Remember me?" />
+            <Switch />
+        </StackLayout>
+
+        <Button Text="Register" />
+
+        <Label
+            x:Name="Register"
+            Text="Register now"
+            FontAttributes="Italic"
+            HorizontalOptions="CenterAndExpand"/>
+      
+
+    </StackLayout>
+</ContentPage>  

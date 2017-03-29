@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.SignUpPage"
+             Title="Sign Up">
+    <StackLayout
+        Orientation="Vertical"
+        Padding="50,20">
+        <Image Source="Icon.png"/>
+
+        <Label Text="Username"/>
+
+        <Entry Placeholder="Username"/>
+
+        <Label Text="Password"/>
+
+        <Entry Placeholder="Password"
+               IsPassword="True"/>
+        
+        <Label Text="Re-enter Password"/>
+        
+        <Entry Placeholder="Re-enter Password"
+               IsPassword="True"/>
+        
+        <Label Text="Phonenumber"/>
+        
+        <Entry Placeholder="Phonenumber"
+               Keyboard="Telephone"/>
+        
+        <Button Text="Register"/>
+        
+        <Label 
+            x:Name="Login"
+            Text="Have account? Login now"
+            FontAttributes="Italic"
+            HorizontalOptions="Center"/>
+    </StackLayout>
+</ContentPage>
