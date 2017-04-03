@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using App1.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,17 +14,12 @@ namespace App1
 	{
 		public SignUpPage ()
 		{
-			InitializeComponent ();
-
-            Login.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(OnTap)
-            });
+		    InitializeComponent();
 		}
 
-	    public async void OnTap()
+	    private async void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
 	    {
-            await Navigation.PushAsync(new MainPage());
+            await Navigation.PopAsync();
         }
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using App1.ViewModels;
 using Xamarin.Forms;
 
 namespace App1
@@ -12,18 +13,13 @@ namespace App1
 		public MainPage()
 		{
 		    InitializeComponent();
-            
-            Register.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(OnTap)
-            });
+		    BindingContext = new MainPageViewModel();
 		}
 
-	    public async void OnTap()
-	    {
-	        await Navigation.PushAsync(new SignUpPage());
-	    }
 
-	    
+	    private async void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
+	    {
+            await Navigation.PushAsync(new SignUpPage());
+        }
 	}
 }

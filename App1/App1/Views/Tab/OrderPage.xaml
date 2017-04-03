@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.Tab.OrderPage">
+    <TableView>
+        <TableRoot>
+            <TableSection Title="First">
+                 <ViewCell>
+                     <StackLayout>
+                         <Label Text="Label"/>
+                         <Entry Placeholder="Entry"/>
+                     </StackLayout>
+                 </ViewCell>
+            </TableSection>
+            
+            <TableSection Title="Second">
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="Label"/>
+                        <Entry Placeholder="Entry"/>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>   
+        </TableRoot>
+    </TableView>
+</ContentPage>

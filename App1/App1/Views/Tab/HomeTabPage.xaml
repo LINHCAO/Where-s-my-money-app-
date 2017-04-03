@@ -3,16 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Views.Tab.HomeTabPage"
              Title="HOME">
-    <StackLayout>
-        <SearchBar Placeholder="Search"/>
-        
-        <Label Text="This is Home Tab Page"
-               FontSize="20"
-               HorizontalOptions="Center"
-           VerticalOptions="Center"/>
-        
-        <Button x:Name="Order"
-                Image="Icon.png"
-                 />
+    <StackLayout Orientation="Horizontal"
+                 VerticalOptions="Start">
+        <SearchBar Placeholder="Search"/>   
+        <Image Source="Icon.png"
+               HeightRequest="16">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+        </Image>
     </StackLayout>
 </ContentPage>

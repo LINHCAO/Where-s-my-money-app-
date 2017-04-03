@@ -16,12 +16,13 @@ namespace App1.Views.Tab
 		public HomeTabPage ()
 		{
 			InitializeComponent ();
-            
+           
 		}
 
-	    //public async void Order_OnClicked(object sender, EventArgs e)
-	    //{
-     //       await Navigation.PushAsync(new OrderPage());
-     //   }
-	}
+
+        private async void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new OrderPage());
+        }
+    }
 }

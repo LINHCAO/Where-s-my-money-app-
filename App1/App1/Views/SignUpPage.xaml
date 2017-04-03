@@ -33,6 +33,10 @@
             x:Name="Login"
             Text="Have account? Login now"
             FontAttributes="Italic"
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+            </Label.GestureRecognizers>
+        </Label>
     </StackLayout>
 </ContentPage>

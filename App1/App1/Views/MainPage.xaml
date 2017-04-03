@@ -14,26 +14,33 @@
 
         <Label Text="Username" />
 
-        <Entry Placeholder="Username" />
+        <Entry Placeholder="Username"
+               Text="{Binding User.Username, Mode=TwoWay}"/>
 
         <Label Text="Password" />
 
         <Entry Placeholder="Password"
-               IsPassword="True" />
+               IsPassword="True" 
+               Text="{Binding User.Password, Mode=TwoWay}"/>
 
         <StackLayout Orientation="Horizontal">
             <Label Text="Remember me?" />
             <Switch />
         </StackLayout>
 
-        <Button Text="Register" />
+        <Button Text="Register" 
+                Command="{Binding Command}"/>
 
         <Label
             x:Name="Register"
             Text="Register now"
             FontAttributes="Italic"
-            HorizontalOptions="CenterAndExpand"/>
-      
+            HorizontalOptions="CenterAndExpand">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"/>
+            </Label.GestureRecognizers>
+        </Label>
 
+        <Label Text="{Binding Message}"/>
     </StackLayout>
 </ContentPage>  
