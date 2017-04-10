@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using App1.Droid.Annotations;
 using App1.Models;
+using Realms;
+using Remotion.Linq.Clauses;
 using Xamarin.Forms;
 
 namespace App1.ViewModels
 {
-    public class MainPageViewModel : INotifyPropertyChanged
+    public class SignUpViewModel : INotifyPropertyChanged
     {
+        
+        public Realm Realm;
+        public User User1 { get; set; }
         private User _user;
         private string _message;
 
@@ -19,7 +25,7 @@ namespace App1.ViewModels
             get { return _user; }
             set
             {
-                _user = value;
+                _user = value; 
                 OnPropertyChanged();
             }
         }
@@ -29,19 +35,34 @@ namespace App1.ViewModels
             get { return _message; }
             set
             {
-                _message = value; 
+                _message = value;
                 OnPropertyChanged();
             }
         }
 
-        public Command Command => new Command(() =>
-        {
-            Message = User.Username + "\t" + User.Password;
-        });
+        public Command Command => new Command(ExcuteSignUp);
 
-        public MainPageViewModel()
+        private void ExcuteSignUp(object obj)
         {
+            AddUser(Realm,User);
+            User1 = Realm.All<User>().First();
+            Message = User1.ToString();
+        }
+
+        public SignUpViewModel()
+        {
+            User1 = new User();
             User = new User();
+            Realm = Realms.Realm.GetInstance();
+            //Message = User1.Username;
+        }
+
+        public void AddUser(Realm realm, User user)
+        {
+            realm.Write(() =>
+            {
+                realm.Add(user);
+            });
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

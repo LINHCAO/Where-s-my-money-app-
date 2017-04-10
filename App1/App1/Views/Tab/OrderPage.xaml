@@ -2,25 +2,108 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Views.Tab.OrderPage">
-    <TableView>
-        <TableRoot>
-            <TableSection Title="First">
-                 <ViewCell>
-                     <StackLayout>
-                         <Label Text="Label"/>
-                         <Entry Placeholder="Entry"/>
-                     </StackLayout>
-                 </ViewCell>
-            </TableSection>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <TableView Intent="Form">
+                <TableRoot Title="Add new">
+                    <TableSection Title="Add new">
+                        
+                        <!--Cell Descryption-->
+                        <ViewCell Height="30">
+                            <StackLayout Orientation="Horizontal">
+                                <BoxView
+                                    x:Name="BView"
+                                    BackgroundColor="Silver"
+                                         WidthRequest="10"/>
+                                
+                                <Label Text="Descryption"
+                                       VerticalTextAlignment="Center"
+                                       FontSize="15" 
+                                       FontAttributes="Bold"/>
+                                
+                                <Entry Placeholder="Descryption" 
+                                       HorizontalOptions="FillAndExpand"
+                                       Focused="VisualElement_OnFocused">
+                                </Entry>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <!--Cell Type-->
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <BoxView BackgroundColor="Silver"
+                                         WidthRequest="10"/>
+                                
+                                <Label Text="Type"
+                                       VerticalTextAlignment="Center"
+                                       FontSize="15"
+                                       FontAttributes="Bold"/>
+                                
+                                <Picker x:Name="MainPicker"
+                                        HorizontalOptions="FillAndExpand"
+                                        Title="Options"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                       <!--Cell Price-->
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <BoxView BackgroundColor="Silver"
+                                         WidthRequest="10"/>
+                                
+                                <Label Text="Price"
+                                       VerticalTextAlignment="Center"
+                                       FontSize="15" 
+                                       FontAttributes="Bold"/>
+                                
+                                <Entry Placeholder="Price"
+                                       Keyboard="Numeric"
+                                       HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <!--Cell Date-->
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <BoxView BackgroundColor="Silver"
+                                         WidthRequest="10"/>
+                                
+                                <Label Text="Date"
+                                       VerticalTextAlignment="Center"
+                                       FontSize="15"
+                                       FontAttributes="Bold"/>
+                                
+                                <DatePicker HorizontalOptions="FillAndExpand" />
+                            </StackLayout>
+                        </ViewCell>  
+                        
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <!--Outside Table View-->
+            <Label
+                VerticalOptions="Fill"
+                Text="Note"/>
+            <Editor
+                VerticalOptions="Fill"
+                FontSize="20"
+                HeightRequest="200"/>
             
-            <TableSection Title="Second">
-                <ViewCell>
-                    <StackLayout>
-                        <Label Text="Label"/>
-                        <Entry Placeholder="Entry"/>
-                    </StackLayout>
-                </ViewCell>
-            </TableSection>   
-        </TableRoot>
-    </TableView>
+            <!--Last Line-->
+            <Grid
+                VerticalOptions="End" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>   
+                </Grid.ColumnDefinitions>
+                <Button Text="Okay"
+                        Grid.Column="0"/>
+                <Button Text="Cancel"
+                        Grid.Column="1"/>
+            </Grid>
+            
+            </StackLayout>
+        
+    </ContentPage.Content>
 </ContentPage>

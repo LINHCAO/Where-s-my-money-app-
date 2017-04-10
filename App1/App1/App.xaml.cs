@@ -14,7 +14,7 @@ namespace App1
 		{
 			InitializeComponent();
 
-			MainPage = new TabPage();
+			MainPage = new NavigationPage(new MainPage());
 
 		}
 

@@ -20,7 +20,7 @@
         <Label Text="Password" />
 
         <Entry Placeholder="Password"
-               IsPassword="True" 
+               IsPassword="True"
                Text="{Binding User.Password, Mode=TwoWay}"/>
 
         <StackLayout Orientation="Horizontal">
@@ -28,7 +28,7 @@
             <Switch />
         </StackLayout>
 
-        <Button Text="Register" 
+        <Button Text="Login"
                 Command="{Binding Command}"/>
 
         <Label
@@ -41,6 +41,9 @@
             </Label.GestureRecognizers>
         </Label>
 
-        <Label Text="{Binding Message}"/>
+        <Label BackgroundColor="Blue"
+               TextColor="White"
+               Text="{Binding Message}"/>
+
     </StackLayout>
 </ContentPage>  

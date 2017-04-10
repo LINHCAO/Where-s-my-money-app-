@@ -15,6 +15,9 @@ namespace App1
 		public SignUpPage ()
 		{
 		    InitializeComponent();
+            BindingContext = new SignUpViewModel();
+            NavigationPage.SetHasNavigationBar(this,false);
+            
 		}
 
 	    private async void TapGestureRecognizer_OnTapped(object sender, EventArgs e)

@@ -10,12 +10,14 @@
 
         <Label Text="Username"/>
 
-        <Entry Placeholder="Username"/>
+        <Entry Placeholder="Username"
+               Text="{Binding User.Username,Mode=TwoWay}"/>
 
         <Label Text="Password"/>
 
         <Entry Placeholder="Password"
-               IsPassword="True"/>
+               IsPassword="True"
+               Text="{Binding User.Password,Mode=TwoWay}"/>
         
         <Label Text="Re-enter Password"/>
         
@@ -25,9 +27,11 @@
         <Label Text="Phonenumber"/>
         
         <Entry Placeholder="Phonenumber"
-               Keyboard="Telephone"/>
+               Keyboard="Telephone"
+               Text="{Binding User.Phonenumber, Mode=TwoWay}"/>
         
-        <Button Text="Register"/>
+        <Button Text="Register"
+                Command="{Binding Command}"/>
         
         <Label 
             x:Name="Login"
@@ -38,5 +42,9 @@
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
             </Label.GestureRecognizers>
         </Label>
+        
+        <Label BackgroundColor="Blue"
+               TextColor="White"
+               Text="{Binding Message}"/>
     </StackLayout>
 </ContentPage>

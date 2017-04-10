@@ -3,8 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Views.Tab.SettingTabPage"
              Title="SETTINGS">
-    <Label Text="This is Setting Page"
-           FontSize="20"
-           HorizontalOptions="Center"
-           VerticalOptions="Center"/>
+    <TableView Intent="Settings">
+        <TableRoot>
+            <TableSection>
+                <ImageCell ImageSource="plus.png" 
+                            Text="My account"/>
+                <ImageCell ImageSource="plus.png"
+                           Text="Help"/>
+                <ImageCell ImageSource="plus.png"
+                           Text="Log out"/>
+            </TableSection>
+        </TableRoot>
+    </TableView>
 </ContentPage>

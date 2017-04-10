@@ -3,14 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Views.Tab.HomeTabPage"
              Title="HOME">
-    <StackLayout Orientation="Horizontal"
+    <StackLayout Orientation="Vertical"
                  VerticalOptions="Start">
-        <SearchBar Placeholder="Search"/>   
-        <Image Source="Icon.png"
+        
+        <StackLayout Orientation="Horizontal">
+        <SearchBar Placeholder="Search"/> 
+        
+        <Image Source="plus.png"
                HeightRequest="16">
             <Image.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                <TapGestureRecognizer 
+                    Tapped="TapGestureRecognizer_OnTapped"/>
             </Image.GestureRecognizers>
-        </Image>
-    </StackLayout>
+        </Image>  
+            
+        </StackLayout> 
+        <Label Text="This is Home Page"
+           FontSize="20"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"/>
+    </StackLayout>     
 </ContentPage>
