@@ -24,7 +24,7 @@ namespace App1.Models
 
         public override string ToString()
         {
-            return (Username + Password + Phonenumber).ToString();
+            return (Username + "\t" + Password + "\t" + Phonenumber).ToString();
         }
 
         public void AddUser(Realm realm, string name, string password, int phone)

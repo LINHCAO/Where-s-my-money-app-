@@ -14,10 +14,15 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Order.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SignInViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SignUpViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RealmListPage.xaml.cs">
+      <DependentUpon>RealmListPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\SignUpPage.xaml.cs">
       <SubType>Code</SubType>
@@ -86,5 +91,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Converters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\RealmListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

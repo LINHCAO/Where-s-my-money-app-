@@ -14,12 +14,14 @@ namespace App1
 		{
 		    InitializeComponent();
             NavigationPage.SetHasNavigationBar(this,false);
-            BindingContext = new SignInViewModel();
+            BindingContext = new SignInViewModel(this.Navigation);
+            
 		}
 
 	    private async void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
 	    {
             await Navigation.PushAsync(new SignUpPage());
+           
         }
 	}
 }

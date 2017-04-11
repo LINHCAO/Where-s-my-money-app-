@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using App1.Droid.Annotations;
 using App1.Models;
 using Realms;
@@ -42,19 +43,20 @@ namespace App1.ViewModels
 
         public Command Command => new Command(ExcuteSignUp);
 
-        private void ExcuteSignUp(object obj)
-        {
-            AddUser(Realm,User);
-            User1 = Realm.All<User>().First();
-            Message = User1.ToString();
-        }
-
         public SignUpViewModel()
         {
             User1 = new User();
             User = new User();
             Realm = Realms.Realm.GetInstance();
             //Message = User1.Username;
+        }
+
+        private void ExcuteSignUp(object obj)
+        {
+            AddUser(Realm,User);
+            User1 = Realm.All<User>().Last();
+            Message = User1.ToString();
+            
         }
 
         public void AddUser(Realm realm, User user)
